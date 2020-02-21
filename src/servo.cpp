@@ -104,12 +104,12 @@ namespace gazebo
     void OnUpdate(const common::UpdateInfo & info)
     {
 
-      double angle = this->model->GetJoint("servo_ax12a::j_Body_Wheel")->Position() *(180/M_PI);
+      double angle = this->model->GetJoint("servo_ax12a::j_Body_Wheel")->Position();
       
-      if(angle >= 80 ){
+      if(angle >= 1.3962222222222223 ){
         change=false;
       }
-      if(angle <= -80){
+      if(angle <= -1.3962222222222223){
         change=true;
       }
 

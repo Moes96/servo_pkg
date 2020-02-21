@@ -106,8 +106,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include ${GAZEBO_INCLUDE_DIRS}
-  #LIBRARIES servo_pkg
+  INCLUDE_DIRS ${GAZEBO_INCLUDE_DIRS}
+  LIBRARIES servo_pkg
   CATKIN_DEPENDS roscpp std_msgs gazebo_ros
   #DEPENDS system_lib
 )
