@@ -76,7 +76,8 @@ namespace gazebo
       //std::cout << "Subscribed to topic> " << torque_ref_topic << std::endl;
 
 
-      Torque = 0.0065;
+      // Torque = 0.0065;
+      Torque = 0.065;
       ltime = 0;
 
 
