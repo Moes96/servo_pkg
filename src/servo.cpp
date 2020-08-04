@@ -51,7 +51,6 @@ namespace gazebo
     {
       // Store the pointer to the model
       this->model = _parent;
-      std::cout << "===>Hello Servo Motor Plugin" << std::endl;
       // Listen to the update event. This event is broadcast every
       // simulation iteration.
       updateConnection = event::Events::ConnectWorldUpdateBegin(
@@ -59,7 +58,7 @@ namespace gazebo
 
       node = gzt::NodePtr(new gzt::Node());
       node->Init();
-      std::cout << "Servo Node Initialized " << std::endl;
+      // std::cout << "Servo Node Initialized " << std::endl;
 
       //Main Servo Topic
       topic = "/gazebo/servos/"+ sdf->GetAttribute("name")->GetAsString();
@@ -68,7 +67,7 @@ namespace gazebo
       pub_main = node->Advertise<gazebo::msgs::Any>(topic);
       Info = gazebo::msgs::ConvertAny("Model:AX12A");
       pub_main->Publish(Info);
-      std::cout << "Topic Advertised> "<< topic << std::endl;
+      // std::cout << "Topic Advertised> "<< topic << std::endl;
 
       //Torque Reference Topic
       //std::string torque_ref_topic = topic + "/torque_ref";
@@ -134,10 +133,10 @@ namespace gazebo
 
     void OnTopicReception(ConstIntPtr& msg)
     {
-      std::cout << "OnTopicReception>";
+      // std::cout << "OnTopicReception>";
       Torque = (double)msg->data();
       Torque /=(100000);
-      std::cout << "Message> Torque set to : " << Torque << std::endl;
+      // std::cout << "Message> Torque set to : " << Torque << std::endl;
     }    
 
   
