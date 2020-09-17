@@ -93,7 +93,7 @@ namespace gazebo
       }
 
       this->rosnode_ = new ros::NodeHandle("servo_pkg");
-      this->pub_ = this->rosnode_->advertise<std_msgs::Float64>("servo_angle", 100);
+      this->pub_ = this->rosnode_->advertise<std_msgs::Float64>("servo_angle", 1);
 
       // fine aggiunta
 
